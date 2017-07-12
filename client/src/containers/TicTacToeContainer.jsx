@@ -61,13 +61,25 @@ class TicTacToeContainer extends Component {
     this.setState(newState)
   }
 
+  handleNewGameClick() {
+    this.setState({
+      currentPlayer: 'x',
+      gameIsWon: false,
+      board: [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+      ]
+    })
+  }
+
   render() {
     return (
       <div>
         <Board board={ this.state.board } handleTileClick={ this.handleTileClick } />
         <GameStatus currentPlayer={ this.state.currentPlayer } message={ this.state.status } />
         <ScoreBoard score={ this.state.score } />
-        <NewGameButton />
+        <NewGameButton handleNewGameClick={this.handleNewGameClick.bind(this)} />
       </div>
     )
   }

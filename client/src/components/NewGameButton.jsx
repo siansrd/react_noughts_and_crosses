@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const NewGameButton = (props) => {
 
   return (
-    <button>New Game</button>
+    <button onClick={props.handleNewGameClick}>New Game</button>
   )
 
 }
