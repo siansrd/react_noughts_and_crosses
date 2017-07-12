@@ -47,6 +47,10 @@ class TicTacToeContainer extends Component {
     
     if (this.winChecker.gameIsWon(newBoard)) {
       newState.status = `${ this.state.currentPlayer } wins!`
+
+      this.setState((prevState) => { 
+        prevState.score[this.state.currentPlayer] ++
+      })
     }
     else {
       const newPlayer = this.switchPlayer()
